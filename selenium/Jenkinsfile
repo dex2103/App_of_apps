@@ -1,0 +1,13 @@
+pipeline {
+    agent {
+        label 'agent'
+    }
+    
+    tools {
+        terraform 'Terraform'
+    }
+    parameters {
+        string(name: 'backendDockerTag', defaultValue: '', description: 'Backend docker image tag')
+        string(name: 'frontendDockerTag', defaultValue: '', description: 'Frontend docker image tag')
+    }
+}
